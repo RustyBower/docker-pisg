@@ -28,6 +28,6 @@ RUN rm -rf \
 # COPY root/ /
 
 # ports and volumes
-VOLUME /nginx /logs /cache
+VOLUME /nginx /logs /cache /config
 
 ENTRYPOINT /opt/pisg-0.73/pisg -co /config/pisg.cfg -o /nginx/index.html
