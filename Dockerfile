@@ -3,11 +3,14 @@ MAINTAINER Rusty Bower
 
 # install packages
 RUN apt-get update
-RUN apt-get install -y cron wget
+RUN apt-get install -y cpanminus cron gcc make wget
+
+# install Data::Dumper
+cpanm Data::Dumper
 
 # download and install pisg
-RUN wget -O /root/pisg-0.73.tar.gz http://prdownloads.sourceforge.net/pisg/pisg-0.73.tar.gz
-RUN tar zxvf /root/pisg-0.73.tar.gz -C /root
+RUN wget -O /tmp/pisg-0.73.tar.gz http://prdownloads.sourceforge.net/pisg/pisg-0.73.tar.gz
+RUN tar zxvf /tmp/pisg-0.73.tar.gz -C /opt
 
 # copy crontab into place
 
@@ -26,3 +29,5 @@ RUN rm -rf \
 
 # ports and volumes
 VOLUME /nginx /logs /cache
+
+ENTRYPOINT /opt/pisg-0.73/pisg -co /config/pisg.cfg -o /nginx/index.html
