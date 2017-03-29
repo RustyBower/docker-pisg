@@ -5,24 +5,21 @@ MAINTAINER Rusty Bower
 ENV DEBIAN_FRONTEND="noninteractive" \
 
 # install packages
-RUN \
- apt-get update && \
- apt-get install -y \
-        cron \
-        wget && \
+RUN apt-get update
+RUN apt-get install -y cron
 
 # download and install pisg
- wget -O /root/pisg-0.73.tar.gz http://prdownloads.sourceforge.net/pisg/pisg-0.73.tar.gz && \
- tar zxvf /root/pisg-0.73.tar.gz -C /tmp && \
+RUN wget -O /root/pisg-0.73.tar.gz http://prdownloads.sourceforge.net/pisg/pisg-0.73.tar.gz
+RUN tar zxvf /root/pisg-0.73.tar.gz -C /root
 
 # copy crontab into place
 
 # start cron
- service cron start && \
+RUN service cron start
 
 # cleanup
- apt-get clean && \
- rm -rf \
+RUN apt-get clean
+RUN rm -rf \
         /tmp/* \
         /var/lib/apt/lists/* \
         /var/tmp/*
