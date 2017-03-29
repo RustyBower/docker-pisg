@@ -1,9 +1,6 @@
 FROM ubuntu
 MAINTAINER Rusty Bower
 
-# global environment settings
-ENV DEBIAN_FRONTEND="noninteractive" \
-
 # install packages
 RUN apt-get update
 RUN apt-get install -y cron
