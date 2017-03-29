@@ -30,4 +30,4 @@ RUN rm -rf \
 # ports and volumes
 VOLUME /nginx /logs /cache
 
-ENTRYPOINT ["/init"]
+ENTRYPOINT /opt/pisg-0.73/pisg -co /config/pisg.cfg -o /nginx/index.html
