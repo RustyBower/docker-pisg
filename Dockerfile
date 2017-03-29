@@ -6,7 +6,7 @@ RUN apt-get update
 RUN apt-get install -y cpanminus cron gcc make wget
 
 # install Data::Dumper
-cpanm Data::Dumper
+RUN cpanm Data::Dumper
 
 # download and install pisg
 RUN wget -O /tmp/pisg-0.73.tar.gz http://prdownloads.sourceforge.net/pisg/pisg-0.73.tar.gz
