@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/RustyBower/docker-pisg.svg?branch=master)](https://travis-ci.org/RustyBower/docker-pisg)
+
 # docker-pisg
 
 Docker container for pisg irc stats
