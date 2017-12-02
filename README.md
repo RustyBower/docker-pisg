@@ -13,9 +13,7 @@ docker run --name=pisg \
   rustybower/pisg
 ```
 
-### Plugin version format
-
-Docker Volumes
+### Docker Volumes
 * `cache` - (optional) directory for pisg cache
 * `config` - (required) configuration directory containing pisg.cfg
 * `channel` - (required) directory containing IRC logs
