@@ -1,0 +1,8 @@
+services:
+  - docker
+
+before_script:
+  - /usr/bin/docker pull rustybower/pisg
+
+script:
+  - docker run -it rustybower/pisg
