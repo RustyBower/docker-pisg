@@ -11,4 +11,4 @@ RUN tar zxvf /tmp/pisg-0.73.tar.gz -C /opt
 # ports and volumes
 VOLUME /nginx /logs /cache /config
 
-ENTRYPOINT /opt/pisg-0.73/pisg -co /config/pisg.cfg -o /nginx/index.html
+CMD ["/opt/pisg-0.73/pisg", "-co", "/config/pisg.cfg", "-o", "/nginx/index.html"]
